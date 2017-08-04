@@ -21,3 +21,7 @@ check("/home/tim/git/DemoTools")
 #use_appveyor("/home/tim/git/DemoTools")
 #use_travis("/home/tim/git/DemoTools")
 #use_coverage(pkg = "/home/tim/git/DemoTools", type = c("codecov", "coveralls"))
+
+#install.packages("/home/tim/git/DemoTools_0.45.tar.gz", repos = NULL, type="source")
+# library(DemoTools)
+#?ageRatioScore
