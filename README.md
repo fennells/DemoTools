@@ -36,15 +36,16 @@ library(DemoTools)
 ?ID
 ?survRatioError
 ?spragueSimple
+?beersSimple # methods including "ord" and "mod", as well as johnson option for young ages
 ?grabill
 ?splitMono
-?spragueCloseout
-?spragueOscillate
+?monoCloseout
+?splitOscillate # accepting e.g. spragueSimple, beersSimple as split methods
 ?birthCohorts
 ?adjustAge
 ?ADM
 ?RDM
-# last updated 27-July-2017
+# last updated 7-Aug-2017
 ```
 These top-level functions have implied an even larger set of simple utilities, which itself is growing fast. We won't bother demonstrating those. 
 

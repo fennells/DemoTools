@@ -4,7 +4,7 @@
 \alias{getModelLifeTable}
 \title{Wrapper to provide a single location to reference all model life tables.}
 \usage{
-getModelLifeTable(ModelName, InputSex)
+getModelLifeTable(ModelName, Sex)
 }
 \arguments{
 \item{ModelName}{string naming the life table to return. Can be "coale-demeny west".}
@@ -15,8 +15,8 @@ getModelLifeTable(ModelName, InputSex)
 list of life tables
 }
 \description{
-
+Still in the works.
 }
 \details{
-
+More model families can easily be added.
 }

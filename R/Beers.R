@@ -72,42 +72,42 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 	MP     <- m - ifelse(OAG, 5, 4) 
 	
 	if (method == "mod"){
-	## Beers Modified Split
-	g1g2 <- matrix(c(
-					0.3332, -0.1938,  0.0702, -0.0118,  0.0022 ,
-					0.2569, -0.0753,  0.0205, -0.0027,  0.0006 ,
-					0.1903,  0.0216, -0.0146,  0.0032, -0.0005 ,
-					0.1334,  0.0969, -0.0351,  0.0059, -0.0011 ,
-					0.0862,  0.1506, -0.0410,  0.0054, -0.0012 ,
-					
-					0.0486,  0.1831, -0.0329,  0.0021, -0.0009 ,
-					0.0203,  0.1955, -0.0123, -0.0031, -0.0004 ,
-					0.0008,  0.1893,  0.0193, -0.0097,  0.0003 ,
-					-0.0108,  0.1677,  0.0577, -0.0153,  0.0007 ,
-					-0.0159,  0.1354,  0.0972, -0.0170,  0.0003
-			), nrow = 10, ncol = 5, byrow = TRUE)
-	
-	g3 <- matrix(c(
-					-0.0160,  0.0973,  0.1321, -0.0121, -0.0013 ,
-					-0.0129,  0.0590,  0.1564,  0.0018, -0.0043 ,
-					-0.0085,  0.0260,  0.1650,  0.0260, -0.0085 ,
-					-0.0043,  0.0018,  0.1564,  0.0590, -0.0129 ,
-					-0.0013, -0.0121,  0.1321,  0.0973, -0.0160
-			), 5, 5, byrow = TRUE) 
-	
-	g4g5 <- matrix(c(0.0003, -0.0170,  0.0972,  0.1354, -0.0159 ,
-					0.0007, -0.0153,  0.0577,  0.1677, -0.0108 ,
-					0.0003, -0.0097,  0.0193,  0.1893,  0.0008 ,
-					-0.0004, -0.0031, -0.0123,  0.1955,  0.0203 ,
-					-0.0009,  0.0021, -0.0329,  0.1831,  0.0486 ,
-					
-					-0.0012,  0.0054, -0.0410,  0.1506,  0.0862 ,
-					-0.0011,  0.0059, -0.0351,  0.0969,  0.1334 ,
-					-0.0005,  0.0032, -0.0146,  0.0216,  0.1903 ,
-					0.0006, -0.0027,  0.0205, -0.0753,  0.2569 ,
-					0.0022, -0.0118,  0.0702, -0.1938,  0.3332 
-			), nrow = 10, ncol = 5, byrow = TRUE)
-    }
+		## Beers Modified Split
+		g1g2 <- matrix(c(
+						0.3332, -0.1938,  0.0702, -0.0118,  0.0022 ,
+						0.2569, -0.0753,  0.0205, -0.0027,  0.0006 ,
+						0.1903,  0.0216, -0.0146,  0.0032, -0.0005 ,
+						0.1334,  0.0969, -0.0351,  0.0059, -0.0011 ,
+						0.0862,  0.1506, -0.0410,  0.0054, -0.0012 ,
+						
+						0.0486,  0.1831, -0.0329,  0.0021, -0.0009 ,
+						0.0203,  0.1955, -0.0123, -0.0031, -0.0004 ,
+						0.0008,  0.1893,  0.0193, -0.0097,  0.0003 ,
+						-0.0108,  0.1677,  0.0577, -0.0153,  0.0007 ,
+						-0.0159,  0.1354,  0.0972, -0.0170,  0.0003
+				), nrow = 10, ncol = 5, byrow = TRUE)
+		
+		g3 <- matrix(c(
+						-0.0160,  0.0973,  0.1321, -0.0121, -0.0013 ,
+						-0.0129,  0.0590,  0.1564,  0.0018, -0.0043 ,
+						-0.0085,  0.0260,  0.1650,  0.0260, -0.0085 ,
+						-0.0043,  0.0018,  0.1564,  0.0590, -0.0129 ,
+						-0.0013, -0.0121,  0.1321,  0.0973, -0.0160
+				), 5, 5, byrow = TRUE) 
+		
+		g4g5 <- matrix(c(0.0003, -0.0170,  0.0972,  0.1354, -0.0159 ,
+						0.0007, -0.0153,  0.0577,  0.1677, -0.0108 ,
+						0.0003, -0.0097,  0.0193,  0.1893,  0.0008 ,
+						-0.0004, -0.0031, -0.0123,  0.1955,  0.0203 ,
+						-0.0009,  0.0021, -0.0329,  0.1831,  0.0486 ,
+						
+						-0.0012,  0.0054, -0.0410,  0.1506,  0.0862 ,
+						-0.0011,  0.0059, -0.0351,  0.0969,  0.1334 ,
+						-0.0005,  0.0032, -0.0146,  0.0216,  0.1903 ,
+						0.0006, -0.0027,  0.0205, -0.0753,  0.2569 ,
+						0.0022, -0.0118,  0.0702, -0.1938,  0.3332 
+				), nrow = 10, ncol = 5, byrow = TRUE)
+	}
 	if (method == "ord"){
 		## Beers Oscillatory (Johnson spreadsheet)
 		g1g2 <- matrix(c(
@@ -118,29 +118,29 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 						0.0819,	 0.1508,	-0.0158,	-0.0284,	 0.0115,
 						0.0404,	 0.2,	    -0.0344,	-0.0128,	 0.0068,
 						0.0093,	 0.2268,	-0.0402,	 0.0028,	 0.0013,
-					   -0.0108,	 0.2272,	-0.0248,	 0.0112,	-0.0028,
-					   -0.0198,	 0.1992,	 0.0172,	 0.0072,	-0.0038,
-					   -0.0191,	 0.1468,	 0.0822,	-0.0084,	-0.0015
-						
+						-0.0108,	 0.2272,	-0.0248,	 0.0112,	-0.0028,
+						-0.0198,	 0.1992,	 0.0172,	 0.0072,	-0.0038,
+						-0.0191,	 0.1468,	 0.0822,	-0.0084,	-0.0015
+				
 				), nrow = 10, ncol = 5, byrow = TRUE)
 		
 		g3 <- matrix(c(
 						-0.0117,	0.0804,	0.157,	-0.0284,	 0.0027,
 						-0.002,  	0.016,	0.22,	-0.04,	     0.006,
-						 0.005,	   -0.028,	0.246,	-0.028,	     0.005,
-						 0.006,	   -0.04,	0.22,	 0.016,  	-0.002,
-						 0.0027,   -0.0284,	0.157,	 0.0804,	-0.0117
-						
+						0.005,	   -0.028,	0.246,	-0.028,	     0.005,
+						0.006,	   -0.04,	0.22,	 0.016,  	-0.002,
+						0.0027,   -0.0284,	0.157,	 0.0804,	-0.0117
+				
 				), 5, 5, byrow = TRUE) 
 		
 		g4g5 <- matrix(c(-0.0015,	-0.0084,	 0.0822,	0.1468,	-0.0191,
 						-0.0038,	 0.0072,	 0.0172,	0.1992,	-0.0198,
 						-0.0028,	 0.0112,	-0.0248,	0.2272,	-0.0108,
-						 0.0013,	 0.0028,	-0.0402,	0.2268,	 0.0093,
-						 0.0068,	-0.0128,	-0.0344,	0.2,	 0.0404,
-						 0.0115,	-0.0284,	-0.0158,	0.1508,	 0.0819,
-						 0.0129,	-0.0356,	 0.0054,	0.0844,	 0.1329,
-						 0.0084,	-0.0256,	 0.0184,	0.0064,	 0.1924,
+						0.0013,	 0.0028,	-0.0402,	0.2268,	 0.0093,
+						0.0068,	-0.0128,	-0.0344,	0.2,	 0.0404,
+						0.0115,	-0.0284,	-0.0158,	0.1508,	 0.0819,
+						0.0129,	-0.0356,	 0.0054,	0.0844,	 0.1329,
+						0.0084,	-0.0256,	 0.0184,	0.0064,	 0.1924,
 						-0.0045,	 0.01,	     0.013,	   -0.078,	 0.2595,
 						-0.0283,	 0.0796,	-0.021,	   -0.1636,	 0.3333
 				), nrow = 10, ncol = 5, byrow = TRUE)
@@ -184,6 +184,7 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 #' 
 #' @param popmat a numeric matrix of population counts in 5-year age groups, with integer-labeled 
 #' margins (age in rows and year in columns). 
+#' @param Age integer vector. Lower age bound of age groups. Detected from row names of \code{popmat} if missing.
 #' @param OAG logical (default \code{TRUE}. Is the final age group open?
 #' @param method character (default \code{"mod"}). Options are presently \code{"mod"} and \code{"ord"}.
 #' @param johnson logical (deault \code{FALSE}). Do we want to adjust young ages according to the DAPPS method?
@@ -217,7 +218,7 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 #' 		.Dim = c(21L, 5L), 
 #' 		.Dimnames = list(seq(0,100,by=5), 1950:1954))
 #' head(p5) # this is the entire matrix
-#' p1 <- beersModSimple(p5, OAG = FALSE)
+#' p1 <- beersSimple(p5, OAG = FALSE)
 #' head(p1)
 #' # note some negatives in high ages
 #' tail(p1) 
@@ -240,18 +241,22 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 #' 		18915,21221,72373)
 #' Age          <- 0:100
 #' names(Value) <- Age
-#' (ord1 <-  beersSimple(Value, OAG = TRUE, method = "ord"))
-#' (mod1 <- beersSimple(Value, OAG = TRUE, method = "mod"))
+#' ord1 <-  beersSimple(Value, OAG = TRUE, method = "ord")
+#' mod1 <- beersSimple(Value, OAG = TRUE, method = "mod")
+#' \dontrun{
 #' plot(Age,Value)
 #' lines(Age, ord1)
 #' lines(Age, mod1)
-#' # in the case
+#' }
+#' 
+#' # notice this negative value. Yuck! 
+#' tail(mod1)
 #' # this replaces ages 90+, guaranteed no negatives.
-#' monoCloseout(Val5, pops = pops)
-#' # Note: there are no kludges built into beersModSimple() to handle such cases.
+#' monoCloseout(Value, pops = mod1, OAG = TRUE)
+#' # Note: there are no kludges built into beersSimple() to handle such cases.
 #' # these ought to be handled by wrappers as appropriate.
 #' 
-#' This replicates Johnson_2016_BEERSP.XLS, males
+#' # This replicates Johnson_2016_BEERSP.XLS, males
 #' M <- c(752124,582662,463534,369976,286946,235867,
 #' 		199561,172133,151194,131502,113439,95614,
 #' 		78777,60157,40960,21318,25451)
@@ -271,7 +276,7 @@ beersExpand <- function(popmat, OAG = FALSE, method = "Mod"){
 #' # allow for rounding differences, so maximum absolute 
 #' # difference of 1
 #' stopifnot(max(abs(round(johnson)[1:length(output)] - output)) == 1)
-	
+
 beersSimple <- function(popmat, Age, OAG = FALSE, method = "mod", johnson = FALSE, Age0){
 	popmat            <- as.matrix(popmat)
 	
@@ -319,17 +324,17 @@ johnsonAdjust <- function(Age0, pop5, pop1){
 	
 	# coefficient matrix
 	DAPPSmod <- matrix(c(0.2333,  0.3445, -0.1222,  0.3778, -0.1556,
-					    -0.0875,  0.3847, -0.0236,  0.0389, -0.0111,
-					    -0.1458,  0.2708,  0.1458, -0.4167,  0.1667,
-					    -0.0833,  0.1151,  0.2817, -0.6111,  0.2222,
-					     0.0000, -0.0080,  0.3254, -0.3889,  0.1111,
-					     0.0458, -0.0613,  0.2637,  0.1833, -0.1000,
-					     0.0375, -0.0458,  0.1292,  0.8167, -0.2333), ncol = 5, byrow = TRUE)
+					-0.0875,  0.3847, -0.0236,  0.0389, -0.0111,
+					-0.1458,  0.2708,  0.1458, -0.4167,  0.1667,
+					-0.0833,  0.1151,  0.2817, -0.6111,  0.2222,
+					0.0000, -0.0080,  0.3254, -0.3889,  0.1111,
+					0.0458, -0.0613,  0.2637,  0.1833, -0.1000,
+					0.0375, -0.0458,  0.1292,  0.8167, -0.2333), ncol = 5, byrow = TRUE)
 	# the composite pop thing
 	py          <- rbind(pop1[2, ], 
-			             pop5[1, ] - (Age0 + pop1[2, ]),
-				         colSums(pop1[6:9, , drop = FALSE]),
-					     pop1[10:11, , drop = FALSE])
+			pop5[1, ] - (Age0 + pop1[2, ]),
+			colSums(pop1[6:9, , drop = FALSE]),
+			pop1[10:11, , drop = FALSE])
 	# gives new ages 2-8
 	pynew       <- DAPPSmod %*% py
 	
