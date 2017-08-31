@@ -27,7 +27,19 @@ shift.vector <- function(x,shift = 0, fill = FALSE){
 	x
 }
 
-
+#' logging that doesn't cause jams
+#' @description Zeros happen. Logging zeros leads to errors in downstream code.
+#' For the sake of robustness, we replace 0s with a small positive number to be 
+#' able to continue with calcs. 
+#' @details Use judiciously, since errors are good too.
+#' @param x  a numeric or complex vector.
+#' @param base a positive or complex number: the base with respect to which
+#'           logarithms are computed.  Defaults to \code{e=exp(1)}.
+#' @export
+rlog <- function(x, base = exp(1)){
+	x <- pmax(x, .Machine$double.xmin)
+	log(x, base = base)
+}
 
 #' a simple centered moving average function
 
@@ -322,8 +334,8 @@ calcAgeAbr <- function(Age){
 #' @export
 #' @examples
 #' vec <- runif(20)
-#' inferAgeIntAbr(vec)
-#' inferAgeIntAbr(vec, OAG = TRUE)
+#' inferAgeIntAbr(vec = vec)
+#' inferAgeIntAbr(vec = vec, OAG = TRUE)
 inferAgeIntAbr <- function(Age, vec, OAG = FALSE){
 	
 	# Age is preferred (lower bounds)
@@ -333,6 +345,7 @@ inferAgeIntAbr <- function(Age, vec, OAG = FALSE){
 	}
 	# otherwise length of vector will do
 	if (missing(Age) & !missing(vec)){
+		stopifnot(length(vec)>5)
 		ageint    <- rep(5,length(vec))
 		ageint[1] <- 1
 		ageint[2] <- 4
@@ -343,6 +356,29 @@ inferAgeIntAbr <- function(Age, vec, OAG = FALSE){
 		
 	ageint
 }
+
+#' infer lower age class bounds from vector of age intervals
+#' 
+#' @description a simple identity
+#' @details It makes no difference whether the final age group is open or how that is coded,
+#' as long as all lower age intervals are coercible to integer.
+#' @param AgeInt vector of age intervals
+#' @param minA what is the lowest age bound to start counting from (default 0)?
+#' @return integer vector of ages
+#' @export 
+#' @examples 
+#' int1 <- c(rep(1,100),NA)
+#' int2 <- c(rep(1,100),"+")
+#' int3 <- inferAgeIntAbr(vec = rep(1,20), OAG = TRUE)
+#' AgefromAgeInt(int1)
+#' AgefromAgeInt(int2) # character OK
+#' AgefromAgeInt(int3)
+AgefromAgeInt <- function(AgeInt, minA = 0){
+	N      <- length(AgeInt)
+	AgeInt <- as.integer(AgeInt[-N])
+	cumsum(c(minA, AgeInt))
+}
+
 
 #' aggregates single year age groups into 5 year age groups
 #' 
